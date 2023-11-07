@@ -1,14 +1,24 @@
 {% extends "siteV/base.html" %}
 
 {% block title %}GPA86 - Pièce auto{% endblock %}
+{% load static %}
 
 {% block content %}
 
-<div style="width:auto; height: 18em; " class="slider">
-    <div class="slide"><img src="images/Promo.jpg" alt="Slide 1"></div>
-    <div class="slide"><img src="/siteV/images/Promo.jpg" alt="Slide 2"></div>
-    <div class="slide"><img src="images/atelier1.jpg" alt="Slide 3"></div>
+
+<div class="slider">
+    <div class="slide">
+        <img src="{% static 'images/GPA86.jpg' %}" alt="Atelier 1">
+    </div>
+    <div class="slide">
+        <img src="{% static 'images/Promo.jpg' %}" alt="Atelier 2">
+    </div>
+    <div class="slide">
+        <img src="{% static 'images/atelier1.jpg' %}" alt="Atelier 3">
+    </div>
 </div>
+
+
 
 <!-- ... autres éléments de la page ... -->
 
@@ -129,5 +139,26 @@
         </div>
     </form>
 </div>
+<style>
+    .slider {
+        width: 100%; /* Largeur souhaitée */
+        height: 18em; /* Hauteur souhaitée */
+        background-color: black;
+        overflow: hidden;
+        
+    }
+    .slide {
+        width: 100%; /* Largeur de chaque diapositive */
+        height: 100%; /* Hauteur de chaque diapositive */
+        
+        
+    }
+    .slide img {
+        width: 100%; /* Ajustement de l'image à la largeur de la diapositive */
+        height: 100%; /* Ajustement de l'image à la hauteur de la diapositive */
+        object-fit: cover; 
+        object-position: center center;/* Ajustement de l'image pour remplir le conteneur sans déformation */
+    }
+</style>
 
 {% endblock %}
